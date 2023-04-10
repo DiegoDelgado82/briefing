@@ -1,0 +1,132 @@
+
+<html lang="es"><head><meta charset="utf-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <script src="./js/cv.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link href="./css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./css/style.css" rel="stylesheet">
+
+    <script src="./js/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"</script>
+
+  
+
+
+    <title>BreafingApp</title>
+</head>
+<body>       
+    <div id="principal">
+      <p id="titulo">BRIEFING DIARIO FRESCOS - 9 CÓRDOBA COLÓN</p> 
+      <p id="fecha">Fecha:</p> 
+      <input type="date" id="date-selector">
+      <p id="participantes">Participantes</p>
+      <div id="listaColaborador">
+        <p id="listado"></p>
+      </div>
+        <p id="cuadroImagen"> Briefing FRESCOS Córdoba Colón</p>
+      
+
+      <p id="temas">Temas Tratados</p>
+      <b><p id="temaNPS">NPS</p></b>
+      <input type="text" name="" id="temasCampos1">
+      <b><p id="temaMerma">Merma</p></b>
+      <input type="text" name="" id="temasCampos2">
+      <b><p id="temaCifra">Cifra</p></b>
+      <input type="text" name="" id="temasCampos3">
+      <b><p id="temaTareas">Tareas</p></b>
+      <b><p id="temaVarios">Varios</p></b>
+      <div id="divTemasCampos4"></div>
+      <div id="divTemasCampos5"></div>
+      <p id="animador">Animador: </p>
+      <select name="animador" id="listaAnimador">
+        <option value=""> </option>
+        <option value="CARLOS GOMEZ">CARLOS GOMEZ</option>
+        <option value="PABLO LÓPEZ">PABLO LÓPEZ</option>
+        <option value='PABLO LÓPEZ'>PABLO LÓPEZ</option>
+        <option value='GERMAN MARTÍN'>GERMAN MARTÍN</option>
+        <option value='GONZALO GARCÍA NIZ'>GONZALO GARCÍA NIZ</option>
+      </select>
+      <img id="logo" src="./img/logo.png" alt="">     
+      <img id="foto" alt=""> 
+
+
+    </div>
+    
+      
+<section id="datosACargar">
+ 
+    <input type="file" id="file-selector">
+    <p id="status"></p>
+    	<p id="tParticipantes">Participantes</p>
+    <select name="colaborador" id="colaborador">
+       <option value=""> </option>
+       <option value='ANDRES SANTILLAN'>ANDRES SANTILLAN</option>
+       <option value='MARCELO  GARRIDO'>MARCELO  GARRIDO</option>
+       <option value='ALEJANDRO TAVELLA'>ALEJANDRO TAVELLA</option>
+       <option value='EDUARDO HLAVACH'>EDUARDO HLAVACH</option>
+       <option value='FABIAN BARINBOIM'>FABIAN BARINBOIM</option>
+       <option value='JOSE SARMIENTO'>JOSE SARMIENTO</option>
+       <option value='VICTO HOYOS'>VICTO HOYOS</option>
+       <option value='PABLO SENS'>PABLO SENS</option>
+       <option value='LEONEL LEGUIZAMON'>LEONEL LEGUIZAMON</option>
+       <option value='ANDRES CEBALLOS'>ANDRES CEBALLOS</option>
+       <option value='ELISABET ARANDA'>ELISABET ARANDA</option>
+       <option value='HUGO PEREYRA'>HUGO PEREYRA</option>
+       <option value='RODRIGO SOSA'>RODRIGO SOSA</option>
+       <option value='JONATHAN CAMPOS'>JONATHAN CAMPOS</option>
+
+    </select>
+    <button class="botonHome" onclick="location.href='Index.html'"><i class="fas fa-home"></i> </button>
+    <button id="botonAgregar" onclick="agregarColaborador()">+</button>
+    <button id="botonBorrar" onclick="borrarColaborador()">-</button>
+    <textarea type="text" name="nota" id="temasCampos4"></textarea> 
+    <textarea type="text" name="nota" id="temasCampos5"></textarea>  
+    <button id="botonDescargar" onclick="generarPDF()">Descargar en PDF</button>
+  
+    
+</section>
+        
+    
+
+
+
+      <script>
+        const status = document.getElementById('status');
+        const output = document.getElementById('foto');
+        if (window.FileList && window.File && window.FileReader) {
+          document.getElementById('file-selector').addEventListener('change', event => {
+            output.src = '';
+            status.textContent = '';
+            const file = event.target.files[0];
+            if (!file.type) {
+              status.textContent = 'Error: The File.type property does not appear to be supported on this browser.';
+              return;
+            }
+            if (!file.type.match('image.*')) {
+              status.textContent = 'Error: The selected file does not appear to be an image.'
+              return;
+            }
+            const reader = new FileReader();
+            reader.addEventListener('load', event => {
+              output.src = event.target.result;
+            });
+            reader.readAsDataURL(file);
+          }); 
+        }
+      </script>
+
+
+
+
+</body></html>
