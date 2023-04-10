@@ -23,7 +23,7 @@ function generarPDF(){
 
 
   var opt = {
-  margin:       1,
+  margin:       0.5,
   filename:     res,
   image:        { type: 'jpeg', quality: 0.98 },
   html2canvas:  { scale: 2 },

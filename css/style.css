@@ -94,7 +94,7 @@ body
   #animador
   {
     position: absolute;
-    top:850px;
+    top:820px;
     left: 50px;
     font-size: 18px;
   }
@@ -102,7 +102,7 @@ body
   #listaAnimador
   {
     position: absolute;
-    top:868px;
+    top:835px;
     left: 140px;
     font-size: 18px;
     font-family: 'Rubik', sans-serif;
@@ -235,7 +235,7 @@ body
     border-radius: 2%;
     background-color: cornflowerblue;
     border-width: 1px;
-    height: 80px;
+    height: 60px;
     width:670px ;
     text-align: left;
     font-family: 'Rubik', sans-serif;
@@ -252,7 +252,7 @@ body
     background-color: white;
     color: black;
     border-width: 1px;
-    height: 80px;
+    height: 60px;
     width:670px ;
     text-align: left;
     font-family: 'Rubik', sans-serif !important;
@@ -274,7 +274,7 @@ body
     border-radius: 2%;
     background-color: cornflowerblue;
     border-width: 1px;
-    height: 80px;
+    height: 60px;
     width:670px ;
     text-align: left;
     font-family: 'Rubik', sans-serif;
@@ -291,7 +291,7 @@ body
     background-color: white;
     color: black;
     border-width: 1px;
-    height: 80px;
+    height: 60px;
     width:670px ;
     text-align: left;
     font-family: 'Rubik', sans-serif !important;
