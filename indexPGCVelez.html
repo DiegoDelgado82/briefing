@@ -28,8 +28,9 @@
 <body>       
     <div id="principal">
       <p id="titulo">BRIEFING DIARIO PGC - 5 VELEZ</p> 
+      <div id="linea"></div>
       <p id="fecha">Fecha:</p> 
-      <input type="date" id="date-selector">
+      
       <p id="participantes">Participantes</p>
       <div id="listaColaborador">
         <p id="listado"></p>
@@ -65,7 +66,7 @@
     
       
 <section id="datosACargar">
- 
+  <input type="date" id="date-selector">
     <input type="file" id="file-selector">
     <p id="status"></p>
     	<p id="tParticipantes">Participantes</p>
@@ -105,7 +106,7 @@
     <button id="botonBorrar" onclick="borrarColaborador()">-</button>
     <textarea type="text" name="nota" id="temasCampos4"></textarea> 
     <textarea type="text" name="nota" id="temasCampos5"></textarea>  
-    <button id="botonDescargar" onclick="generarPDF()">Descargar en PDF</button>
+    <button id="botonDescargar" onclick="generarPDF()"><i class="fa fa-file-pdf-o"></i> Descargar en PDF</button>
   
     
 </section>
